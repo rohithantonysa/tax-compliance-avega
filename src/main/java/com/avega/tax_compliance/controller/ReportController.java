@@ -1,7 +1,7 @@
 package com.avega.tax_compliance.controller;
+import lombok.RequiredArgsConstructor;
 
 import com.avega.tax_compliance.repository.FinancialTransactionRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,10 +11,11 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api/reports")
+@RequiredArgsConstructor
 public class ReportController {
 
-    @Autowired
-    private FinancialTransactionRepository transactionRepository;
+
+    private final FinancialTransactionRepository transactionRepository;
 
     @GetMapping("/summary")
     public ResponseEntity<List<Map<String, Object>>> getCustomerSummary() {
