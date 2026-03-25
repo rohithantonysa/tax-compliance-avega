@@ -27,5 +27,17 @@ public class TaxComplianceApplication {
         return mapper;
     }
 
-
+    @Bean
+    public CommandLineRunner createAdminUser(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+        return args -> {
+            User admin = userRepository.findByUsername("admin").orElse(new User());
+            admin.setUsername("admin");
+            admin.setPassword(passwordEncoder.encode("password123")); 
+            admin.setRole("ROLE_ADMIN");
+            userRepository.save(admin);
+            
+            
+            System.out.println("ADMIN PASSWORD FORCED TO 'password123'");
+        };
+    }
 }
