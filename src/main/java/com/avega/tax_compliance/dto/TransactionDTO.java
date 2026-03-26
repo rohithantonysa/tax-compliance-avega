@@ -3,7 +3,6 @@ import lombok.Data;
 import com.avega.tax_compliance.entity.TransactionType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -21,13 +20,13 @@ public class TransactionDTO {
     private String customerId;
 
     @NotNull(message = "Amount is required")
-   // @Positive(message = "Amount must be greater than zero")
+   // @Positive
     private BigDecimal amount;
 
     @NotNull(message = "Tax Rate is required")
     private BigDecimal taxRate;
 
-    private BigDecimal reportedTax; // Can be null (which means non-compliant)
+    private BigDecimal reportedTax; 
 
     @NotNull(message = "Transaction Type is required")
     private TransactionType transactionType;

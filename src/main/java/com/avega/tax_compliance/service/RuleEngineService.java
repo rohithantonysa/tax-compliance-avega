@@ -52,9 +52,9 @@ public class RuleEngineService {
 
                     case "REFUND_VALIDATION":
                         if (tx.getTransactionType().name().equals("REFUND") && tx.getAmount().compareTo(BigDecimal.ZERO) > 0) {
-                            createException(tx, rule, "Refund amounts should be negative or processed against a sale");
+                            createException(tx, rule, "Refund amounts should be negativee");
                         }
-                        break;
+                        break;		
                 }
             } catch (Exception e) {
                 System.err.println("Error processing rule " + rule.getRuleName() + ": " + e.getMessage());

@@ -1,9 +1,11 @@
 package com.avega.tax_compliance.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
+@Data
 @Entity
 @Table(name = "transactions")
 public class FinancialTransaction {
@@ -36,109 +38,6 @@ public class FinancialTransaction {
     @Enumerated(EnumType.STRING)
     private ComplianceStatus complianceStatus;
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getTransactionId() {
-		return transactionId;
-	}
-
-	public void setTransactionId(String transactionId) {
-		this.transactionId = transactionId;
-	}
-
-	public LocalDate getDate() {
-		return date;
-	}
-
-	public void setDate(LocalDate date) {
-		this.date = date;
-	}
-
-	public String getCustomerId() {
-		return customerId;
-	}
-
-	public void setCustomerId(String customerId) {
-		this.customerId = customerId;
-	}
-
-	public BigDecimal getAmount() {
-		return amount;
-	}
-
-	public void setAmount(BigDecimal amount) {
-		this.amount = amount;
-	}
-
-	public BigDecimal getTaxRate() {
-		return taxRate;
-	}
-
-	public void setTaxRate(BigDecimal taxRate) {
-		this.taxRate = taxRate;
-	}
-
-	public BigDecimal getReportedTax() {
-		return reportedTax;
-	}
-
-	public void setReportedTax(BigDecimal reportedTax) {
-		this.reportedTax = reportedTax;
-	}
-
-	public TransactionType getTransactionType() {
-		return transactionType;
-	}
-
-	public void setTransactionType(TransactionType transactionType) {
-		this.transactionType = transactionType;
-	}
-
-	public BigDecimal getExpectedTax() {
-		return expectedTax;
-	}
-
-	public void setExpectedTax(BigDecimal expectedTax) {
-		this.expectedTax = expectedTax;
-	}
-
-	public BigDecimal getTaxGap() {
-		return taxGap;
-	}
-
-	public void setTaxGap(BigDecimal taxGap) {
-		this.taxGap = taxGap;
-	}
-
-	public ValidationStatus getValidationStatus() {
-		return validationStatus;
-	}
-
-	public void setValidationStatus(ValidationStatus validationStatus) {
-		this.validationStatus = validationStatus;
-	}
-
-	public String getFailureReason() {
-		return failureReason;
-	}
-
-	public void setFailureReason(String failureReason) {
-		this.failureReason = failureReason;
-	}
-
-	public ComplianceStatus getComplianceStatus() {
-		return complianceStatus;
-	}
-
-	public void setComplianceStatus(ComplianceStatus complianceStatus) {
-		this.complianceStatus = complianceStatus;
-	}
 
     
 }
