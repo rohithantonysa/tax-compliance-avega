@@ -3,10 +3,6 @@ INSERT INTO users (username, password, role)
 VALUES ('admin', '$2a$10$dXJ3SW6G7P50lGmMkkmwe.20cQQubK3.HCGzzDExr5R6sFzE/vO/6', 'ROLE_ADMIN')
 ON DUPLICATE KEY UPDATE username=username;
 
-INSERT INTO users (username, password, role) 
-VALUES ('auditor', '$2a$10$dXJ3SW6G7P50lGmMkkmwe.20cQQubK3.HCGzzDExr5R6sFzE/vO/6', 'ROLE_AUDITOR')
-ON DUPLICATE KEY UPDATE username=username;
-
 -- 2. Pre-fill the Mandatory Tax Rules with JSON configuration
 INSERT INTO tax_rules (rule_name, is_active, severity, rule_configuration)
 VALUES ('HIGH_VALUE_TRANSACTION', true, 'HIGH', '{"threshold": 50000}')
